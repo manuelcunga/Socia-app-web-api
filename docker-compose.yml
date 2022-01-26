@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  database_socia: 
+    image: postgres
+    container_name: database_socia
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=Docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=socia
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+  app:
+    build: .
+    container_name: socia
+    ports:
+      - 3000:3000
+    restart: always
+    command: "npm start"
+    volumes:
+      - .:/usr/app
+    network_mode: host
+    
+
+
+volumes:
+  pgdata:
+    
+

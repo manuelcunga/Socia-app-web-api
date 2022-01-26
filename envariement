@@ -1,0 +1,6 @@
+NODE_ENV=development
+HOST=localhost
+USER_NAME=postgres
+DB_NAME=luckyDube
+PASSWORD=root
+PORT=5432
